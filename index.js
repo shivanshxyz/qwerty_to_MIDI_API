@@ -24,5 +24,11 @@ module.exports = function(options){
       }
     }
 
-    
+    var commands = {}
+
+    var mode = modes[options.mode || 'keys']
+  
+    commands[mode.offset[0]] = function octDown(){
+      currentOffset = Math.max(-mode.offsetBy, currentOffset - mode.offsetBy)
+    }
 }
