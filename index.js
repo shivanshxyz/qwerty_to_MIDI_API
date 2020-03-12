@@ -72,4 +72,15 @@ module.exports = function(options){
           }
         }
     }
+
+    function command(e){
+        if (e.type == 'keydown'){
+          var command = commands[keycode(e.keyCode)]
+          if (typeof command === 'function'){
+            command()
+          }
+        }
+    }
+    
+    return keyboard
 }
