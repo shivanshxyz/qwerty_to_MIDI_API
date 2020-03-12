@@ -1,6 +1,6 @@
 var Through = require('through')
 var keycode = require('keycode')
-var KeyStream = require('./key_stream')
+var KeyRead = require('./key_read')
 
 module.exports = function(options){
     options = options || {}
@@ -52,7 +52,7 @@ module.exports = function(options){
     })
 
     if (global.document && global.document.addEventListener && options.bind !== false){
-        KeyStream().pipe(keyboard)
+        KeyRead().pipe(keyboard)
     }
     
     var ups = {}
